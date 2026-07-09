@@ -54,7 +54,7 @@ class MLP():
             # Calculate the gradients with back propagation.
             g1, g2 = self.back(X, y, z1, h1, y_hat)
 
-            print(-torch.sum(y*torch.log(y_hat))/n)
+            print((-torch.sum(y*torch.log(y_hat))/n).item())
 
             # Update the weights.
             self.weights[0] = w1 - lr*g1
